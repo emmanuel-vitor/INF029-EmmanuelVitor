@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 #define TAM_MAX_ALUNO 1
 #define TAM_MAX_PROFESSOR 1
 
@@ -27,7 +28,8 @@ dtNascimento dataDeNascimento;
 int cpf;
 } Professor; // criação de struct com informações de Professor
 
-Aluno cadastroProfessor[TAM_MAX_ALUNO]; //vetor de cadastro de alunos
+Professor cadastroProfessor[TAM_MAX_ALUNO]; //vetor de cadastro de alunos
+
 
 
 // função de cadastro de alunos
@@ -86,9 +88,12 @@ int cadastrandoProfessor(void){
     }
   }
 
+
 // Listando Alunos
 void listandoAluno(void){
   for (int i=0; i<TAM_MAX_ALUNO;i++){
+    print("\nlistando alunos\n");
+    printf("********************");
     printf("%s",cadastroAluno[i].nome);
     printf("%d",cadastroAluno[i].matricula);
     printf("%d/%d/%d",cadastroAluno[i].dataDeNascimento.dia
@@ -98,11 +103,16 @@ void listandoAluno(void){
     printf("%d",cadastroAluno[i].cpf);
   }
 }
+void ordenandoAluno(void){
+  for()
+}
 
 // Listando Professores
-void listandoAluno(void){
+void listandoProfessor(void){
   for (int i=0; i<TAM_MAX_PROFESSOR;i++){
-    printf("%s",cadastroProfessor[i][i].nome);
+    print("\nlistando prof\n");
+    printf("********************");
+    printf("%s",cadastroProfessor[i].nome);
     printf("%d",cadastroProfessor[i].matricula);
     printf("%d/%d/%d",cadastroProfessor[i].dataDeNascimento.dia
                      ,cadastroProfessor[i].dataDeNascimento.mes
@@ -116,4 +126,6 @@ void listandoAluno(void){
 int main(){
   cadastrandoAluno();
   cadastrandoProfessor();
+  listandoAluno();
+  listandoProfessor();
 }
